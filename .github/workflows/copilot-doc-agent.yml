@@ -30,6 +30,8 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
       - name: Run Copilot doc-agent
+        env:
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
         run: |
           gh copilot --agent=doc-agent --prompt "
           Review the latest git changes and update README.md accordingly.
