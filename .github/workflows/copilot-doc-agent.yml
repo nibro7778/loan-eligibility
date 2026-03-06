@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Copilot doc-agent
         run: |
-          gh copilot agent run doc-agent "
+          gh copilot --agent=doc-agent run --prompt "
           Review the latest git changes and update README.md accordingly.
 
           Steps:
