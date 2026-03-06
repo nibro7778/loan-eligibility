@@ -6,7 +6,7 @@ namespace LoanEligibilityService.Application.Services
 {
     public class LoanEligibilityService : ILoanEligibilityService
     {
-        private const int MinimumAge = 18;
+        private const int MinimumAge = 20;
         private const int MinimumCreditScore = 600;
         private const decimal MinimumMonthlyIncome = 2000;
         private const int LoanToIncomeMultiplier = 10;

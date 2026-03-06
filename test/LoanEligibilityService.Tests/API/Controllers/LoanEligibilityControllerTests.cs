@@ -140,7 +140,7 @@ namespace LoanEligibilityService.Tests.API.Controllers
             var expectedResponse = new LoanEligibilityResponse
             {
                 IsEligible = false,
-                Reasons = new List<string> { "Applicant must be at least 18 years old." },
+                Reasons = new List<string> { "Applicant must be at least 20 years old." },
                 Message = "Loan application does not meet eligibility criteria."
             };
             _mockService.Setup(s => s.CheckEligibilityAsync(request)).ReturnsAsync(expectedResponse);

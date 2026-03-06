@@ -44,14 +44,14 @@ namespace LoanEligibilityService.Tests.Application.Services
         {
             // Arrange
             var request = CreateValidRequest();
-            request.Age = 17;
+            request.Age = 19;
 
             // Act
             var result = await _sut.CheckEligibilityAsync(request);
 
             // Assert
             result.IsEligible.Should().BeFalse();
-            result.Reasons.Should().ContainSingle(r => r.Contains("18 years old"));
+            result.Reasons.Should().ContainSingle(r => r.Contains("20 years old"));
             result.Message.Should().Be("Loan application does not meet eligibility criteria.");
         }
 
@@ -60,7 +60,7 @@ namespace LoanEligibilityService.Tests.Application.Services
         {
             // Arrange
             var request = CreateValidRequest();
-            request.Age = 18;
+            request.Age = 20;
 
             // Act
             var result = await _sut.CheckEligibilityAsync(request);
@@ -187,7 +187,7 @@ namespace LoanEligibilityService.Tests.Application.Services
             // Assert
             result.IsEligible.Should().BeFalse();
             result.Reasons.Should().HaveCount(4);
-            result.Reasons.Should().Contain(r => r.Contains("18 years old"));
+            result.Reasons.Should().Contain(r => r.Contains("20 years old"));
             result.Reasons.Should().Contain(r => r.Contains("600"));
             result.Reasons.Should().Contain(r => r.Contains("2000"));
             result.Reasons.Should().Contain(r => r.Contains("10x monthly income"));
