@@ -1,3 +1,4 @@
+```markdown
 # Loan Eligibility Service
 
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/)
@@ -544,3 +545,4 @@ ENTRYPOINT ["dotnet", "LoanEligibilityService.API.dll"]
 ## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+```
