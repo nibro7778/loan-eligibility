@@ -18,10 +18,10 @@ def load_agent_prompt():
 # ----------------------------
 def get_diff():
     # Ensure we have full history
-    subprocess.run(["git", "fetch", "origin", "master"], check=True)
+    subprocess.run(["git", "fetch", "origin", "main"], check=True)
 
     diff = subprocess.check_output(
-        ["git", "diff", "origin/master...HEAD"],
+        ["git", "diff", "origin/main...HEAD"],
         text=True
     )
 
@@ -33,7 +33,7 @@ def get_diff():
 # ----------------------------
 def get_commit_log():
     return subprocess.check_output(
-        ["git", "log", "origin/master..HEAD", "--oneline"],
+        ["git", "log", "origin/main..HEAD", "--oneline"],
         text=True
     )
 
@@ -109,7 +109,7 @@ def main():
     print("🚀 Doc Agent started")
 
     # Ensure full git context
-    subprocess.run(["git", "fetch", "origin", "master"], check=True)
+    subprocess.run(["git", "fetch", "origin", "main"], check=True)
 
     diff = get_diff()
     commits = get_commit_log()
