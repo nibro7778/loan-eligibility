@@ -34,6 +34,8 @@ jobs:
           python tools/doc_agent/main.py
 
       - name: Create Pull Request if README changed
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet README.md; then
             echo "No documentation changes required"
